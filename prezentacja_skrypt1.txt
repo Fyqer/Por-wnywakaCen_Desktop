@@ -1,0 +1,142 @@
+
+Rozpiska : Daniel Gałeczka 1-17
+Daniel Gałeczka notatki {
+
+
+Po co testować oprogramowanie (3):
+
+Testowanie oprogramowania jest wymagane, aby zwrócić uwagę na wady i błędy popełnione podczas faz rozwoju.
+Ma to kluczowe znaczenie, ponieważ zapewnia wiarygodność, a także zadowolenie Klienta z danej aplikacji.
+Bardzo ważne jest zapewnienie odpowiedniej jakości produktu. Dostarczenie klientom produktu wysokiej jakości pomaga w zdobyciu ich zaufania
+ISQB(5)
+Omowienie co to ISQB
+Międzynarodowa Rada ds. Testowania Oprogramowania – to tablica certyfikacji do testowania oprogramowania, która działa na arenie międzynarodowej. 
+
+
+
+
+Techniki testowania metodą czarnej skrzynki (8)
+	
+Analiza wartości brzegowych: Zadaniem testera jest poddanie testom brzegowych wartości wejściowych,
+ w przypadku których zachodzi największe prawdopodobieństwo otrzymania błędnych wartości wyjściowych.
+	
+Technika wszystkich par - Jest to technika, w której przypadki testowe są projektowane tak, 
+by wykonać wszystkie możliwe dyskretne kombinacje każdej pary parametrów wejściowych. Technikę można stosować również do testowania konfiguracji środowisk testowych. 
+	
+Podział na klasy równoważności: Podział zbioru danych na klasy równoważności polega na pogrupowaniu 
+danych wejściowych na elementy o takich samych własnościach. W wyniku tego procesu otrzymujemy klasy. 
+Teoretycznie jeśli prawidłowo wyznaczyliśmy sobie te klasy, to wystarczy wziąć jedną wartość (dowolną) z każdej klasy, by przetestować czy system działa poprawnie dla każdego warunku.
+	
+Zgadywanie błędów: - metoda badawcza , w której przypadki testowe wykorzystywane w celu 
+nalezienia błędów w programach są ustalane na podstawie doświadczeń z wcześniejszych badań Zgadywanie błędów - https://pl.qaz.wiki/wiki/Error_guessing
+A także takie techniki jak : Analiza wartości brzegowych, Wykres przyczynowo skutków czy  analiza domeny
+
+}-
+
+Sladj biała skrzynka skrzynka :
+
+Testy instrukcji: Wszystkie instrukcje znajdujące się w kodzie muszą zostać uwzględnione w zadaniach testowych, tak aby każda z nich została wykonana co najmniej raz w cyklu testowym.
+Testy decyzji: Każda z instrukcji decyzji musi zostać wykonana przynajmniej jednokrotnie w cyklu testowym.
+Testy warunków rozgałęzień: Wszystkie warunki określonej decyzji muszą zostać co najmniej jeden raz przetestowane pod kątem prawidłowego funkcjonowania.
+Testy decyzji/warunków: Przetestowane muszą zostać wszystkie kombinacje możliwych warunków decyzji dla wszystkich decyzji.
+Testy przepływu danych: Technika ta pozwala upewnić się, czy wszystkie zmienne i dane używane w obrębie systemu zostaną przetestowane poprzez wymuszenie przepływu określonych zmiennych przez każdą możliwą kalkulację.
+Testy wielu warunków: Dzięki tej technice można mieć pewność, że każdy z punktów wejścia kodu został poddany testowi co najmniej raz w cyklu testowym.
+
+
+
+
+Piramida testów(16):
+
+W aplikacjach najwięcej powinno być testów jednostkowych (łatwych do napisania i szybkich), 
+mniej testów integracyjnych, a najmniej testów e2e (najwolniejszych) - jest to tak zwana "piramida testów".
+
+1 Powinny być wykonywane w izolacji bez zewnętrznych zależności.
+
+Testy jednostkowe wykonywane są w izolacji bez jakichkolwiek zewnętrznych 
+zależności takich jak plik, baza danych, czy webserwis. Testy, które korzystają z tych zależności
+ to testy integracyjne.
+
+#2 Testy jednostkowe powinny być powtarzalne i niezawodne.
+Testy jednostkowe dzięki temu, że nie są uzależnione od żadnych zewnętrznych zależności, zawsze powinny być powtarzalne.
+
+#3 Testy jednostkowe powinny być szybkie.
+Testy jednostkowe są uruchamiane wiele razy, właśnie ze względu na to, że są szybkie. Jeżeli Twój test
+
+
+#4 Testy jednostkowe powinny być łatwe, czytelne, jeżeli się nie powiodą, to błąd powinien być łatwy do znalezienia.
+Dla testów jednostkowych powinieneś stosować odpowiednie nazewnictwo, zgodne z konwencją.
+ Twoje testy nie powinny zawierać zbyt dużo linii kodu wykonuje
+ się długo, to oznacza, że prawdopodobnie korzysta z jakichś zewnętrznych zależności i nie jest testem jednostkowym.
+
+
+
+
+
+
+
+
+Daniel Mirończuk notatki {
+
+6. Najczęściej wykonywany jest przez twórców kodu jako pierwsze i podstawowe sprawdzenie każdego programu. 
+Testowanie statyczne sprawdza podstawową poprawność kodu i pozwala ocenić, czy program jest gotowy na bardziej szczegółowe testowanie.
+W testowaniu statycznym można wyróżnić podstawową analizę kodu i precyzyjne wyszukiwanie typowych błędów.
+
+17.Współcześnie dla wielu języków programowania występują narzędzia programistyczne wyszukujące i 
+zaznaczające tego typu błędy w trakcie pisania lub przed kompilacją kodu. Tego typu narzędzia mają czasem w swojej nazwie jako komponent wyraz Lint 
+- na cześć programu wchodzącego w skład kompilatora C zamieszczonego w wersji 7 systemu UNIX wypuszczonej w 1979 roku.
+
+18.
+Przykładowymi takimi błędami są odwołania do pozycji o wartości przekraczającej zakres tablicy. 
+Wyszukiwanie typowych błędów, często mało doceniane jako metoda testowania, 
+potrafi mieć znaczący wpływ na skuteczność procesu testowania poprzez wczesne wykrycie skomplikowanych błędów u źródła.
+
+19.
+Testy dynamiczne są najczęściej wykonywane po pozytywnym przejściu kodu przez testy statyczne.
+
+20.
+-opierające zakres testów na budowie kodu;
+-testujące oprogramowanie pod kątem spełnienia wymagań w założeniach.
+
+21.
+-Testy białej skrzynki nie są w stanie wykazać braku implementacji funkcji, którą powinien posiadać system docelowy. 
+Sprawdzają jednak dokładnie operacje wykonywane w zaimplementowanych metodach
+
+22.
+-Inżynieryjna klarowność procedury: jej postępu i zakończenia.
+
+wady:
+-Zespół testowy musi posiadać głęboką, profesjonalną wiedzę o strukturze kodu źródłowego.
+
+24.
+Głównym przedmiotem testu nie jest budowa wewnętrzna programu, lecz jego założenia funkcjonalne.
+
+Testy funkcjonalne mają wykrywać błędy implementacji funkcjonalności zawartych w specyfikacji wymagań. 
+Zakres badanych wartości jest zwykle inny niż w przypadku testów strukturalnych.
+
+25.
+ Zdaje sobie sprawę, że dane wejściowe zwracają pewne dane wyjściowe, ale nie skupia się na tym, 
+w jaki sposób oprogramowanie generuje dane wyjściowe, ponieważ to nie jest przedmiotem jej testów.
+
+26.
+-ze względu na weryfikowane obiekty (przykładowo testy klas, komponentów, podsystemów, systemu lub zintegrowanych systemów)
+-na biało-skrzynkowe (strukturalne), weryfikujące kod źródłowy oraz czarno-skrzynkowe testujące warstwę interfejsu
+
+27.
+ -testy poprawek defektów
+-testy oprogramowania po wykonaniu zmian, niekoniecznie w kodzie (przykładowo aktualizacji wersji systemu operacyjnego)
+
+28.
+Podstawową cechą odróżniającą test penetracyjny od włamania jest zgoda atakowanej strony na tego rodzaju działania, 
+ponadto osoba przeprowadzająca test jest zobowiązana do przedstawienia raportu dokumentującego znalezione problemy 
+(często wraz ze sposobami ich usunięcia i rekomendacjami podnoszącymi bezpieczeństwo testowanego systemu). 
+Test penetracyjny ma na celu zbadanie bezpieczeństwa systemu na włamanie oraz skuteczność zabezpieczeń w implementacji rzeczywistej 
+lub możliwie najbardziej zbliżonej do rzeczywistej.
+
+29.
+Testy penetracyjne grey box będące kompromisem pomiędzy black box i white box, zawierające elementy obu podejść 
+np. jedynie konta użytkowników o różnych rolach.
+
+31.a OWASP to skrót od „Open Web Application Security Project”.
+}
+
+

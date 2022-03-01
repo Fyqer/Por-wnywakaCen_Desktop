@@ -1,0 +1,15 @@
+debug/kurierpanel.o
+debug/magazynier.o
+debug/main.o
+debug/mainwindow.o
+debug/produkty.o
+debug/sklep.o
+debug/zmiana.o
+debug/qrc_obrazy.o
+debug/qrc_src.o
+debug/moc_kurierpanel.o
+debug/moc_magazynier.o
+debug/moc_mainwindow.o
+debug/moc_produkty.o
+debug/moc_sklep.o
+debug/moc_zmiana.o

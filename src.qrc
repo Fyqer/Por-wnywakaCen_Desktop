@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/obrazy">
+        <file>sklep.jpg</file>
+        <file>biedra.jpg</file>
+        <file>lidl.jpg</file>
+        <file>tesco.jpg</file>
+        <file>koszyk.jpg</file>
+        <file>068140_940.jpg</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>biedra.jpg</file>
+        <file>lidl.jpg</file>
+        <file>koszyk.jpg</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,15 @@
+release/kurierpanel.o
+release/magazynier.o
+release/main.o
+release/mainwindow.o
+release/produkty.o
+release/sklep.o
+release/zmiana.o
+release/qrc_obrazy.o
+release/qrc_src.o
+release/moc_kurierpanel.o
+release/moc_magazynier.o
+release/moc_mainwindow.o
+release/moc_produkty.o
+release/moc_sklep.o
+release/moc_zmiana.o
